@@ -1,0 +1,19 @@
+.description{
+    display: flex;
+    width: 60%;
+    height: 500px;
+    margin-top: 50px;
+    margin-bottom: 160px;
+}
+.description__img{
+    width: 50%;
+    margin: 30px;
+    object-fit: cover;
+}
+.description__title{
+    margin-top: 40px;
+}
+.description__text{
+    font-size: 20px;
+    width: 87%;
+}
