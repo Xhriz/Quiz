@@ -6,6 +6,10 @@
  width: 100%;
  object-fit: cover;
 }
+.img-close{
+ width: 26px;
+ height: 30px;
+}
 .button-close{
  border: none;
  color: white;
