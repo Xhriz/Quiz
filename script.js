@@ -59,7 +59,8 @@ buttonClose.addEventListener("click", ()=>{
   login.classList.add("login__done")
 })
 
+/*
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
   const answer=document.querySelector(".input").value;
-})
+});*/
