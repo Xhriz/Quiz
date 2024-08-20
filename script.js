@@ -1,6 +1,5 @@
 const image=document.querySelector(".picture__img");
 const popup=document.querySelector(".popup");
-const button=document.querySelector(".button");
 
 const popupGallery=document.querySelector(".popup-gallery");
 const popupImg=document.querySelector(".popup-gallery__img");
@@ -17,6 +16,7 @@ const loginEmail=document.querySelector(".login__email");
 const loginPassword= document.querySelector(".login__password");
 
 const form=document.querySelector(".answer");
+const tableCel=document.querySelectorAll(".table__body_cel");
 
 let index = 0;
 
@@ -42,7 +42,14 @@ popupGallery.addEventListener("click", ()=>{
 })
 
 function updateGallery(){
-  const offset = -index*600;
+ let offset = -index*600;
+  
+  if(window.innerWidth<=1500){
+    offset=-index*500;
+  } 
+  if(window.innerWidth<=1300){
+    offset=-index*400;
+  }
   container.style.transform=`translateX(${offset}px)`;
 }
 
@@ -56,11 +63,12 @@ rightArrow.addEventListener("click", ()=>{
 });
 
 buttonClose.addEventListener("click", ()=>{
-  login.classList.add("login__done")
+  login.classList.add("login__done");
 })
 
-/*
+
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
   const answer=document.querySelector(".input").value;
-});*/
+  tableCel.textContent=answer;
+});

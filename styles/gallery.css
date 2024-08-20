@@ -43,3 +43,52 @@ transition: transform 0.5s ease;
     cursor: pointer;
     transform: scale(1.03);
 }
+
+@media screen and (max-width:1790px){
+.gallery{
+   right: 50px;
+   }
+}
+@media screen and (max-width:1635px){
+  .gallery{
+   right: 30px;
+    }
+ }
+
+ @media screen and (max-width:1545px){
+.gallery{
+ right: 20px;
+  }
+}
+
+@media screen and (max-width:1510px){
+.gallery{
+  right: 12px;
+  }
+}
+@media screen and (max-width:1500px){
+  .gallery{
+    width: 500px;
+    right: 50px;
+    }
+  }
+@media screen and (max-width:1360px){
+      .gallery{
+        right: 30px;
+        }
+    }
+@media screen and (max-width:1300px){
+      .gallery{
+        right: 50px;
+        width: 400px;
+        bottom: -900px;
+        }
+        .gallery__container{
+          height: 300px;
+        }
+    }
+    @media screen and (max-width:1120px){
+      .gallery{
+        right: 30px;
+      }
+    }
