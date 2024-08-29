@@ -1,4 +1,6 @@
+
 import "./styles/index.css";
+//import "./models/user";
 
 const image=document.querySelector(".picture__img");
 const popup=document.querySelector(".popup");
@@ -14,12 +16,11 @@ const rightArrow=document.querySelector(".gallery__arrow--right");
 
 const buttonClose=document.querySelector(".button-close");
 const login=document.querySelector(".login");
-const loginButton=document.querySelector(".login__button");
-const loginEmail=document.querySelector(".login__email");
-const loginPassword= document.querySelector(".login__password");
 
-const form=document.querySelector(".answer");
-const tableCel=document.querySelectorAll(".table__body_cel");
+const register=document.querySelector(".register");
+const toRegister=document.querySelector(".login__toregister");
+const toLogin=document.querySelector(".register__tologin");
+
 
 let index = 0;
 
@@ -68,10 +69,15 @@ rightArrow.addEventListener("click", ()=>{
 
 buttonClose.addEventListener("click", ()=>{
   login.classList.add("login__done");
-})
+});
 
+toRegister.addEventListener("click", ()=>{
+  register.classList.add("register__done")
+  login.classList.remove("login__done");
+});
 
-form.addEventListener("submit", (e)=>{
-  e.preventDefault();
+toLogin.addEventListener("click", ()=>{
+  register.classList.remove("register__done")
+  login.classList.add("login__done");
 });
 
