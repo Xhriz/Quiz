@@ -1,7 +1,9 @@
+
 import "./styles/index.css";
 
 const image=document.querySelector(".picture__img");
 const popup=document.querySelector(".popup");
+const imgPopup=document.querySelector(".popup__image");
 
 const popupGallery=document.querySelector(".popup-gallery");
 const popupImg=document.querySelector(".popup-gallery__img");
@@ -24,10 +26,12 @@ const registerSetor=document.querySelector('.register__setor');
 const registerEmail=document.querySelector('.register__email');
 const registerPassword=document.querySelector('.register__password');
 
+
 let index = 0;
 
 image.addEventListener("click", ()=>{
   popup.classList.add("popup__visible");
+  imgPopup.src=image.src;
   document.body.style.overflow = 'hidden';
 });
 popup.addEventListener("click", ()=>{
@@ -70,8 +74,17 @@ rightArrow.addEventListener("click", ()=>{
 
 buttonClose.addEventListener("click", ()=>{
   login.classList.add("login__done");
-})
+});
 
+toRegister.addEventListener("click", ()=>{
+  register.classList.add("register__done")
+  login.classList.remove("login__done");
+});
+
+toLogin.addEventListener("click", ()=>{
+  register.classList.remove("register__done")
+  login.classList.add("login__done");
+});
 
 toRegister.addEventListener("click", ()=>{
   register.classList.add("register__done")
@@ -90,3 +103,4 @@ toLogin.addEventListener("click", ()=>{
 ///mongoose.connect('mongodb://127.0.0.1:27017/ranking')
 //.then(() => console.log('Conectado ao MongoDB'))
 //.catch((error) => console.error('Erro ao conectar ao MongoDB:', error));
+
