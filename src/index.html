@@ -46,96 +46,6 @@
           <td class="table__body_cel-area"></td>
           <td class="table__body_cel-points"></td>
         </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
-        <tr class="table__body">
-          <td class="table__body_cel-name">Christian dos ajos liwi</td>
-          <td class="table__body_cel-area">REGAP</td>
-          <td class="table__body_cel-points">30</td>
-        </tr>
       </table>
       </div>
     </section>
@@ -165,7 +75,7 @@
   </main>
 
   <section class="popup"> 
-    <img class="popup__image" src="./Image/REGAP.png" alt="Imagem para adivinhaçao de local"> 
+    <img class="popup__image" src="" alt="Imagem para adivinhaçao de local"> 
   </section>
 
   <section class="popup-gallery">
@@ -179,24 +89,26 @@
 
   <section class="login" id="login">
     <form class="login__block" action="submit">
-      <h2 class="login__title">Login</h1>
-      <input class="login__email" type="email" placeholder="E-mail" required>
-      <input class="login__password" type="password" placeholder="Senha" minlength="8" required>
+      <h2 class="login__title">Login</h1>  
+      <input class="login__email" type="email" name="email" placeholder="E-mail" required>
+      <input class="login__password" type="password" name="senha" placeholder="Senha" minlength="8" required>
+      <span class="login__error-msg">Email ou senha incorretos</span>
       <button class="login__button">Entrar</button>
       <p>Ainda não tem uma conta? <a class="login__toregister" href="#" id="toRegister">Registrar</a></p>
     </form>
   </section>
 
-  <section class="register" id="register">
+  <section class="register" >
     <form class="register__block">
       <h2 class="register__title">Registrar</h1>
-        <input class="register__name" type="text" placeholder="Nome completo" minlength="2" required>
-        <input class="register__setor" type="text" placeholder="Setor" required>
-      <input class="register__email" type="email" placeholder="E-mail" required>
-      <input class="register__password" type="password" placeholder="Senha" minlength="8" required>
-      <button class="register__button">Registrar</button>
+        <input class="register__name" type="text" name="nome" placeholder="Nome completo" minlength="2" required>
+        <input class="register__setor" type="text" name="setor" placeholder="Setor" required>
+      <input class="register__email" type="email" name="email" placeholder="E-mail" required>
+      <input class="register__password" type="password" name="senha" placeholder="Senha" minlength="8" required>
+      <button class="register__button" type="submit">Registrar</button>
       <p>Já tem uma conta? <a class="register__tologin" href="#" id="toLogin">Entrar</a></p>
     </form>
+    <div id="message"></div>
   </section>
 </body>
 </html>

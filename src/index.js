@@ -1,6 +1,4 @@
-
 import "./styles/index.css";
-//import "./models/user";
 
 const image=document.querySelector(".picture__img");
 const popup=document.querySelector(".popup");
@@ -20,6 +18,21 @@ const login=document.querySelector(".login");
 const register=document.querySelector(".register");
 const toRegister=document.querySelector(".login__toregister");
 const toLogin=document.querySelector(".register__tologin");
+
+const tableCelName=document.querySelector('.table__body_cel-name');
+const tableCelSetor=document.querySelector('.table__body_cel-area');
+const tableCelPoints=document.querySelector('.table__body_cel-points');
+
+const formRegister=document.querySelector(".register__block");
+const registerName=document.querySelector(".register__name");
+const registerSetor=document.querySelector(".register__setor");
+const registerEmail=document.querySelector(".register__email");
+const registerPassword=document.querySelector(".register__password");
+const formLogin=document.querySelector(".login__block");
+const loginEmail=document.querySelector(".login__email");
+const loginPassword=document.querySelector(".login__password");
+const loginError=document.querySelector(".login__error-msg");
+const formAnswer=document.querySelector(".answer");
 
 
 let index = 0;
@@ -44,7 +57,7 @@ imageGallery.forEach((image)=>{
 popupGallery.addEventListener("click", ()=>{
   popupGallery.classList.remove("popup-gallery__visible");
   document.body.style.overflow='auto';
-})
+});
 
 function updateGallery(){
  let offset = -index*600;
@@ -81,3 +94,114 @@ toLogin.addEventListener("click", ()=>{
   login.classList.add("login__done");
 });
 
+
+
+formRegister.addEventListener('submit', (e)=>{
+  e.preventDefault();
+
+  const data={
+    name:registerName.value,
+    setor:registerSetor.value,
+    email:registerEmail.value,
+    password:registerPassword.value,
+  };
+
+  fetch('/register', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  }).then((res)=>{
+       if(res.ok){
+        return res.json();
+       }else{
+        throw new Error('Erro ao registrar')
+       }
+  })
+  .then((data)=>{
+    console.log('usuario registrado', data);
+  })
+  .catch((error)=>{
+    console.log('erro', error);
+  })
+})
+
+
+formLogin.addEventListener('submit', (e)=>{
+  e.preventDefault();
+
+  const data={
+    email:loginEmail.value,
+    password:loginPassword.value
+  }
+  fetch('/login', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  }).then((res)=>{
+       if(res.ok){
+        return res.json();
+       }else{
+        throw new Error('Erro ao entrar')
+       }
+  })
+
+})
+
+
+
+formAnswer.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = {
+    email: userEmail, // Supondo que você tenha o email do usuário logado armazenado
+    answer: formAnswer.querySelector('.input').value,
+  };
+
+  try {
+    const response = await fetch('/submit-answer', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    if (response.status === 200) {
+      alert(result.message); // Resposta enviada com sucesso
+    } else {
+      alert(result.message); // Exibe mensagem de erro
+    }
+  } catch (error) {
+    console.error('Erro ao enviar resposta:', error);
+  }
+});
+
+
+//
+
+async function fetchRanking() {
+  try {
+    const response = await fetch('/ranking');
+    const ranking = await response.json();
+
+    ranking.forEach((user) => {
+      const row = `
+        <tr class="table__body">
+          <td class="table__body_cel-name">${user.name}</td>
+          <td class="table__body_cel-area">${user.setor}</td>
+          <td class="table__body_cel-points">${user.point}</td>
+        </tr>
+      `;
+      document.querySelector('.table').innerHTML += row;
+    });
+  } catch (error) {
+    console.error('Erro ao buscar ranking:', error);
+  }
+}
+
+fetchRanking();
