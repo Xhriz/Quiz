@@ -19,6 +19,7 @@ const register=document.querySelector(".register");
 const toRegister=document.querySelector(".login__toregister");
 const toLogin=document.querySelector(".register__tologin");
 
+<<<<<<< HEAD
 const tableCelName=document.querySelector('.table__body_cel-name');
 const tableCelSetor=document.querySelector('.table__body_cel-area');
 const tableCelPoints=document.querySelector('.table__body_cel-points');
@@ -33,6 +34,13 @@ const loginEmail=document.querySelector(".login__email");
 const loginPassword=document.querySelector(".login__password");
 const loginError=document.querySelector(".login__error-msg");
 const formAnswer=document.querySelector(".answer");
+=======
+const formRegister=document.querySelector('.register__block');
+const registerName=document.querySelector('.register__name');
+const registerSetor=document.querySelector('.register__setor');
+const registerEmail=document.querySelector('.register__email');
+const registerPassword=document.querySelector('.register__password');
+>>>>>>> da2dcd06e1a2d3788c7aa5c2e1802a945b20cf8a
 
 
 let index = 0;
@@ -94,6 +102,7 @@ toLogin.addEventListener("click", ()=>{
   login.classList.add("login__done");
 });
 
+<<<<<<< HEAD
 
 
 formRegister.addEventListener('submit', (e)=>{
@@ -205,3 +214,23 @@ async function fetchRanking() {
 }
 
 fetchRanking();
+=======
+toRegister.addEventListener("click", ()=>{
+  register.classList.add("register__done")
+  login.classList.remove("login__done");
+});
+
+toLogin.addEventListener("click", ()=>{
+  register.classList.remove("register__done")
+  login.classList.add("login__done");
+});
+
+
+
+
+// Conecte-se ao banco de dados
+///mongoose.connect('mongodb://127.0.0.1:27017/ranking')
+//.then(() => console.log('Conectado ao MongoDB'))
+//.catch((error) => console.error('Erro ao conectar ao MongoDB:', error));
+
+>>>>>>> da2dcd06e1a2d3788c7aa5c2e1802a945b20cf8a

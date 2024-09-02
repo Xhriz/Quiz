@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -8,6 +9,13 @@ const userSchema = new mongoose.Schema({
     maxlength: 50,
   },
   setor: {
+=======
+/*
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  nome: {
+>>>>>>> da2dcd06e1a2d3788c7aa5c2e1802a945b20cf8a
     type: String,
     required: true,
     minlength: 2,
@@ -17,6 +25,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 2,
+<<<<<<< HEAD
     maxlength: 30,
   },
   password:{
@@ -37,3 +46,28 @@ const userSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('user', userSchema);
+=======
+    maxlength: 50,
+    unique: true,
+  },
+  setor: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+  },
+  pontos: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
+  resposta: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 100,
+  },
+});
+
+module.exports = mongoose.model('User', userSchema);*/
+>>>>>>> da2dcd06e1a2d3788c7aa5c2e1802a945b20cf8a

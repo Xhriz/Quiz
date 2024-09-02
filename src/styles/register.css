@@ -1,3 +1,73 @@
+<<<<<<< HEAD
+.register {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.register__block {
+  background-color: white;
+  width: 550px;
+  height: 570px;
+  text-align: center;
+  border-radius: 3px;
+}
+.register__title {
+  margin-top: 50px;
+  font-size: 32px;
+}
+.register__name {
+  display: block;
+  margin: 50px auto 30px;
+  height: 45px;
+  width: 70%;
+  padding: 8px;
+}
+.register__setor {
+  display: block;
+  margin: 10px auto;
+  height: 45px;
+  width: 70%;
+  padding: 8px;
+}
+.register__email {
+  display: block;
+  margin: 30px auto;
+  height: 45px;
+  width: 70%;
+  padding: 8px;
+}
+.register__password {
+  display: block;
+  margin: 10px auto;
+  height: 45px;
+  width: 70%;
+  padding: 8px;
+}
+.register__button {
+  display: block;
+  margin: 30px auto;
+  background-color: rgb(10, 122, 47);
+  color: white;
+  border: none;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+}
+.register__done {
+  visibility: visible;
+}
+.register__button:hover {
+  background-color: rgb(4, 150, 4);
+}
+=======
 .register{
     position: fixed;
     top: 0;
@@ -66,3 +136,4 @@
 .register__button:hover{
     background-color: rgb(4, 150, 4);
 }
+>>>>>>> origin/master
