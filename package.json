@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development"
@@ -12,21 +11,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Xhriz/Quiz.git"
-=======
-    "build": "webpack --mode production",
-    "dev": "webpack serve --mode development && nodemon index.js"
->>>>>>> origin/master
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
   "bugs": {
     "url": "https://github.com/Xhriz/Quiz/issues"
   },
   "homepage": "https://github.com/Xhriz/Quiz#readme",
-=======
->>>>>>> origin/master
   "devDependencies": {
     "@babel/preset-env": "^7.25.4",
     "assert": "^2.1.0",
@@ -34,6 +26,7 @@
     "babel-loader": "^9.1.3",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
+    "concurrently": "^8.2.2",
     "crypto-browserify": "^3.12.0",
     "css-loader": "^7.1.2",
     "cssnano": "^7.0.5",
@@ -42,6 +35,7 @@
     "nodemon": "^3.1.4",
     "path-browserify": "^1.0.1",
     "postcss-loader": "^8.1.1",
+    "prisma": "^5.19.1",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
     "stream-browserify": "^3.0.0",
@@ -53,26 +47,16 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "core-js": "^3.38.1",
-    "express": "^4.19.2",
-    "mongoose": "^8.6.0"
-=======
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "core-js": "^3.38.1",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",
-    "mongoose": "^8.5.4",
-<<<<<<< HEAD
+    "mongoose": "^8.6.0",
     "stream-http": "^3.2.0",
     "url": "^0.11.4"
-=======
-    "path-browserify": "^1.0.1",
-    "querystring-es3": "^0.2.1",
-    "stream-browserify": "^3.0.0"
->>>>>>> origin/master
->>>>>>> da2dcd06e1a2d3788c7aa5c2e1802a945b20cf8a
   }
 }
