@@ -63,6 +63,13 @@
 .register__done {
   visibility: visible;
 }
+.register__tologin {
+  cursor: pointer;
+  color: blue;
+}
+.register__tologin:hover {
+  color: red;
+}
 .register__button:hover {
   background-color: rgb(4, 150, 4);
 }

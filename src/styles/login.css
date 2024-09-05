@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
 }
 .login__block {
   background-color: white;
@@ -46,13 +45,25 @@
   height: 50px;
   cursor: pointer;
 }
-.login__done {
-  visibility: visible;
-}
 .login__error-msg{
-  color: red;
-  font-weight: bold;
   visibility: hidden;
+    color: red;
+    font-weight: bold;
+    margin-top: 1000px;
+  }
+.login__done {
+visibility: visible;
+}
+.login__done {
+  visibility: hidden;
+  }
+.login__toregister {
+  cursor: pointer;
+  color: blue;
+}
+
+.login__toregister:hover {
+  color: red;
 }
 .login__button:hover {
   background-color: rgb(4, 150, 4);

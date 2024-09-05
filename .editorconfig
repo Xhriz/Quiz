@@ -1,0 +1,21 @@
+# http://editorconfig.org
+# Uma propriedade especial que deve ser especificada na parte superior do arquivo fora de
+# qualquer seção. Ajuste para true para parar a busca de arquivo .editorconfig no arquivo atual
+root = true
+[*]
+# Estilo de indentação
+indent_style = espaço
+# Tamanho da indentação em caracteres de espaçamento simples
+# Valores possíveis - an integer, tab
+indent_size = 2
+
+end_of_line = lf
+
+charset = utf-8
+ 
+trim_trailing_whitespace = true
+ 
+[*.md]
+trim_trailing_whitespace = false
+ 
+insert_final_newline = true

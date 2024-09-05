@@ -32,6 +32,7 @@ const formLogin = document.querySelector('.login__block');
 const loginEmail = document.querySelector('.login__email');
 const loginPassword = document.querySelector('.login__password');
 const loginError = document.querySelector('.login__error-msg');
+const headerWelcome=document.querySelector('.header__welcome');
 const formAnswer = document.querySelector('.answer');
 
 let index = 0;
@@ -83,17 +84,18 @@ rightArrow.addEventListener("click", () => {
 });
 
 buttonClose.addEventListener("click", () => {
-  login.classList.add("login__done");
+  login.classList.remove("login__done");
 });
 
 toRegister.addEventListener("click", () => {
   register.classList.add("register__done");
-  login.classList.remove("login__done");
+  login.classList.add("login__done");
+  loginError.style.visibility="hidden";
 });
 
 toLogin.addEventListener("click", () => {
   register.classList.remove("register__done");
-  login.classList.add("login__done");
+  login.classList.remove("login__done");
 });
 
 formRegister.addEventListener('submit', (e) => {
@@ -116,9 +118,14 @@ formRegister.addEventListener('submit', (e) => {
   .then((res) => {
     if (res.ok) {
       register.classList.remove("register__done");
-      login.classList.add("login__done");
+      login.classList.remove("login__done");
       tableCelName.textContent=data.name;
       tableCelSetor.textContent=data.setor;
+      headerWelcome.textContent=`Bem-vindo(a), ${data.name}!`; 
+      registerName.value="";
+      registerEmail.value="";
+      registerPassword.value="";
+      registerSetor.value="";
       return res.json();
     } else {
       throw new Error('Erro ao registrar');
@@ -136,6 +143,7 @@ formLogin.addEventListener('submit', (e) => {
     email: loginEmail.value,
     password: loginPassword.value
   }
+  loginError.style.visibility = "visible";
 
   fetch('http://localhost:3000/login', {
     method: 'POST',
@@ -146,16 +154,17 @@ formLogin.addEventListener('submit', (e) => {
   })
     .then((res) => {
       if (res.ok) {
-        login.classList.remove("login__done");
+        login.classList.add("login__done");
+        loginError.style.visibility="hidden"; 
+        loginEmail.value="";
+        loginPassword.value="";
         return res.json();
       } else {
         throw new Error('Erro ao realizar login');
       }
     })
-    .then((data) => {
-      console.log('Login realizado com sucesso', data);
-    })
     .catch((error) => {
+      loginError.classList.remove("login__done");
       console.log('Erro', error);
     });
 });
