@@ -34,8 +34,11 @@ const loginPassword = document.querySelector('.login__password');
 const loginError = document.querySelector('.login__error-msg');
 const headerWelcome=document.querySelector('.header__welcome');
 const formAnswer = document.querySelector('.answer');
+const popupAnswer=document.querySelector('.popup-answer');
+const answerInput=document.querySelector('.input');
 
 let index = 0;
+document.body.style.overflow = 'hidden';
 
 image.addEventListener("click", () => {
   popup.classList.add("popup__visible");
@@ -85,6 +88,7 @@ rightArrow.addEventListener("click", () => {
 
 buttonClose.addEventListener("click", () => {
   login.classList.remove("login__done");
+  document.body.style.overflow = 'hidden';
 });
 
 toRegister.addEventListener("click", () => {
@@ -155,6 +159,7 @@ formLogin.addEventListener('submit', (e) => {
     .then((res) => {
       if (res.ok) {
         login.classList.add("login__done");
+        document.body.style.overflow = 'auto';
         loginError.style.visibility="hidden"; 
         loginEmail.value="";
         loginPassword.value="";
@@ -168,17 +173,15 @@ formLogin.addEventListener('submit', (e) => {
       console.log('Erro', error);
     });
 });
-
-/*
+  
 formAnswer.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const data = {
-    email: loginEmail.value, 
     answer: formAnswer.querySelector('.input').value,
   };
 
-    fetch('/submit-answer', {
+    fetch('http://localhost:3000/answer', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -187,16 +190,20 @@ formAnswer.addEventListener('submit', (e) => {
     })
     .then((res)=>{
       if (res.ok) {
+        popupAnswer.classList.add("popup-answer__visible");
+        answerInput.value="";
         return res.json();
       } else {
         throw new Error('Erro ao realizar o envio');
       }
     }).catch(error=>{
       console.error('Erro ao enviar resposta:', error);
-     
   })})
 
-
+  popupAnswer.addEventListener("click", ()=>{
+    popupAnswer.classList.remove("popup-answer__visible");
+  })
+/*
   function fetchRanking() {
       fetch('/ranking')
       .then((res)=>{

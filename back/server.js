@@ -52,42 +52,17 @@ app.post('/login', async (req, res)=>{
      
 })
 
+app.post('/answer', async (req, res) => {
+    const {answer}= req.body;
+try{
+    users.push({answer})
+      res.status(200).send('Deu bom');
+}
+    catch(err){
+      res.status(400).send('Deu ruim' + err);
+    }; 
 
-
-
-
-
-/*
-
-app.post('/submit-answer', (req, res) => {
-    const { email, answer } = req.body;
-    if (!answer || !email) {
-      return res.status(400).json({ success: false, message: 'Dados incompletos' });
-    }
-      User.findOneAndUpdate({ email }, { $push:{answers:answer} }, {new:true})
-      .then((user)=>{
-        if (!user) {
-          return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
-        }
-        res.json({ success: true, user });
-      })
-    .catch((err) => {
-      console.error('Erro ao salvar a resposta', err);
-      return res.status(500).json({ success: false, message: 'Erro ao salvar a resposta' });
-    });
   })
-
-  app.get('/ranking', (req, res) => {
-      const ranking = User.find({}).sort({ point: -1 }).select('name setor point')
-      .then(()=>{
-        res.status(200).json(ranking);
-      })
-      .catch ((error)=> {
-        res.status(500).json({ message: 'Erro ao buscar ranking', error });
-      })      
-    } 
-);
-*/
 
 const PORT = 3000;
 app.listen(PORT, () => {

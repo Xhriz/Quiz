@@ -1,0 +1,32 @@
+.popup-answer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    visibility: hidden;
+    }
+    .popup-answer__block{
+        background-color: white;
+        height: 450px;
+        border-radius: 20px;
+        width: 550px ;
+        text-align: center;
+    }
+    .popup-answer__text{
+     font-size: 35px;
+    }
+    .popup-answer__img{
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-top: 10px;
+    }
+    .popup-answer__visible{
+        visibility: visible;
+      }

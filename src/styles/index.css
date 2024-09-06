@@ -9,6 +9,8 @@
 @import url(./popup-gallery.css);
 @import url(./login.css);
 @import url(./register.css);
+@import url(./popup-answer.css);
+
 
 * {
   box-sizing: border-box;
